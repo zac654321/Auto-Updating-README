@@ -11,5 +11,5 @@ jobs:
       - name: Update Github Activity
         uses: TheDanniCraft/activity-log@v1
         with:
-          GITHUB_USERNAME: "thedannicraft"
-          GITHUB_TOKEN: ${{ secrets.ACTIONSECRET2024 }}
+          GITHUB_USERNAME: "zac654321"
+          GITHUB_TOKEN: ${{ secrets.ACTIONSECRET }}
