@@ -1,0 +1,29 @@
+version: 2
+updates:
+  # --- 1. React/Node.js dependencies (e.g., package.json) ---
+  - package-ecosystem: "npm"
+    directory: "/" # Location of package.json. Use "/" if it's in the root.
+    schedule:
+      interval: "weekly" # Check for updates weekly
+      day: "monday"
+    # Create pull requests that update dependency versions for production
+    target-branch: "main" 
+    labels:
+      - "dependencies"
+      - "npm"
+      - "security"
+    # Group minor and patch updates for less noise
+    groups:
+      npm-minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- 2. GitHub Actions dependencies (.github/workflows) ---
+  - package-ecosystem: "github-actions"
+    directory: "/" # Location of workflow files
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "actions"
